@@ -6,7 +6,8 @@ import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 import org.springframework.stereotype.Repository;
-import cl.duoc.diegogalvez.model
+
+import cl.duoc.diegogalvez.model.SolicitudMedica;
 
 @Repository
 public class SolicitudRepository {
@@ -15,10 +16,13 @@ public class SolicitudRepository {
 
     public List<SolicitudMedica> buscarTodas() {
         return new ArrayList<>(almacenamiento.values());
+    
     }
 
     public Optional<SolicitudMedica> buscarPorId(Long id) {
         return Optional.ofNullable(almacenamiento.get(id));
+   
+   
     }
 
     public SolicitudMedica guardar(SolicitudMedica solicitud) {
@@ -28,10 +32,12 @@ public class SolicitudRepository {
 
     public void eliminarPorId(Long id) {
         almacenamiento.remove(id);
+    
     }
 
     public boolean existePorId(Long id) {
         return almacenamiento.containsKey(id);
     }
+
 }
 

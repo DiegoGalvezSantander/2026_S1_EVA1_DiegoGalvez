@@ -25,7 +25,7 @@ public class SolicitudService {
     
     }
 
-    
+
     public SolicitudMedica crear(SolicitudMedica solicitud) {
         return solicitudRepository.guardar(solicitud);
 
